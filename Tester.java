@@ -48,7 +48,7 @@ public class Tester {
 		String shiftingReturn = "";
 		
 		 // Put up a file chooser window to select a file to read. 
-	    JFileChooser chooser = new JFileChooser("/Users/James/Documents/workspace/cryptography/src/");
+	    JFileChooser chooser = new JFileChooser("/Users/");
 	    int status = chooser.showOpenDialog(null);
 
 	    
