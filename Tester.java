@@ -5,6 +5,12 @@
  * Test program for the various ciphers in this project. Creates a cipher
  * object of the Caesar, Shifting, and Custom varieties. The file input.txt will
  * used as the input file for the cipher.
+ *
+ * TODO:
+ *		1. add in feature for user to create cipher alphabet file
+ *		2. try implementing FileChooser correctly
+ *		3. output results to an output file, allow for clearing of input file?
+ *		4. Allow user to choose only one cipher result
  */
 
 import java.util.Scanner;
