@@ -3,7 +3,17 @@
 
 #### Overview
 This project contains several different implementations of ciphers, inspired by
-Simon Singh's *[The Code Book](http://simonsingh.net/books/the-code-book/)*.
+Simon Singh's *[The Code Book](http://simonsingh.net/books/the-code-book/)*. Currently
+it includes 3 ciphers:
+1. a [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher),
+which works by replacing each letter in the plaintext with a letter that is some
+constant number of spaces away in the real alphabet.
+2. a [substitution cipher](https://en.wikipedia.org/wiki/Substitution_cipher),
+which works by replacing each letter in the plaintext according to a constant cipher
+alphabet.
+3. a custom shifting substitution cipher, which works in the same way as a normal
+substitution cipher, except that it shifts the alphabet used by some constant number
+of positions after each letter is substituted.
 
 #### Compiling
 
@@ -11,4 +21,4 @@ Compilation is simple: the user can either manually run `javac *.java` or use th
 
 #### Running
 
-To run the test file, the user may use the command `make run` or `java Tester`. The program will create a popup window that will prompt the user to select a plaintext file. The test program will then output the original contents of the selected file, followed by the contents of the file after the various ciphers have been applied to it.
+To run the test file, the user may use the command `make run` or `java Tester`. The user should manually fill in the file `input.txt` with whatever text they would like to be encoded. The test program will then output the original contents of the input file, followed by the contents of the file after the various ciphers have been applied to it.
