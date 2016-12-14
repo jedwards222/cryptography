@@ -41,7 +41,7 @@ public class GridCipher {
 	private String encode(String input) {
 		String output = "";
 		int length = input.length();
-		// The output will be created by getting the elements from each row in turn
+    // The output will be created by getting the elements from each row in turn
 		for (int row = 0; row < height; row++) {
 			for (int pos = row; pos < length; pos += height) {
 				output += input.charAt(pos);
@@ -62,6 +62,7 @@ public class GridCipher {
 				output += input.charAt(col);
 			}
 		}
+		// Deal with incompletely filled rows of the grid
 		int count = 0;
 		while (count < over) {
 			output+= input.charAt((height+1)*(count+1)-1);

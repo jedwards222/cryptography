@@ -3,8 +3,8 @@
  * @author James
  * June 3, 2016
  * Test program for the various ciphers in this project. Creates a cipher
- * object of the Caesar, Shifting, and Custom varieties. The file input.txt will
- * used as the input file for the cipher.
+ * object of the Caesar, Shifting, Custom, and Grid varieties. The file input.txt
+ * will be used as the input file for each cipher.
  *
  * TODO:
  *		1. add in feature for user to create cipher alphabet file
@@ -13,8 +13,9 @@
  *		4. Allow user to choose only one cipher result
  *		5. Add additional cipher options
  *		6. Increase efficiency by using StringBuilder class
- *		7. User input for cipher options (i.e. Caesar shift distance)
+ *		7. User input for cipher options (i.e. Caesar shift distance, alphabet)
  *		8. restructure cipher classes as inheriting from one interface
+ *		9. Replace tabs with spaces
  */
 
 import java.util.Scanner;
