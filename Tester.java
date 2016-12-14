@@ -11,6 +11,10 @@
  *		2. try implementing FileChooser correctly
  *		3. output results to an output file, allow for clearing of input file?
  *		4. Allow user to choose only one cipher result
+ *		5. Add additional cipher options
+ *		6. Increase efficiency by using StringBuilder class
+ *		7. User input for cipher options (i.e. Caesar shift distance)
+ *		8. restructure cipher classes as inheriting from one interface
  */
 
 import java.util.Scanner;
@@ -58,6 +62,8 @@ public class Tester {
 		String customReturn = "";
 		ShiftingCustomCipher mystery2 = new ShiftingCustomCipher(beta, encrypt, 1);
 		String shiftingReturn = "";
+		GridCipher mystery3 = new GridCipher(3, encrypt);
+		String gridReturn;
 
     // Create a Scanner to read the input file.
     File inputFile = new File("input.txt");
@@ -78,11 +84,14 @@ public class Tester {
     		original += nextString[a];
     	}
     }
+		gridReturn = mystery3.changeMessage(original);
+
   	// Comment out to remove spaces between words and increase security
     System.out.println("Original Message: " + original);
   	System.out.println("Caesar Result: " + caesarReturn);
   	System.out.println("Custom Cipher Result: " + customReturn);
   	System.out.println("Shifting Cipher Result: " + shiftingReturn);
+		System.out.println("Grid Cipher Result: " + gridReturn);
     input.close();
 	}
 }
