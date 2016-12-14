@@ -4,7 +4,7 @@
 #### Overview
 This project contains several different implementations of ciphers, inspired by
 Simon Singh's *[The Code Book](http://simonsingh.net/books/the-code-book/)*. Currently
-it includes 3 ciphers:
+it includes 4 ciphers:
 
 1. a [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher),
 which works by replacing each letter in the plaintext with a letter that is some
