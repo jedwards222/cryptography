@@ -1,13 +1,13 @@
 /**
- * Caesar.java
+ * CaesarCipher.java
  * @author James
  * June 3, 2016
  * Allows conversion between ciphertext and plaintext using Caesar cipher
  * and when used in conjunction with relevant Tester file.
  */
 
-public class Caesar {
-	
+public class CaesarCipher {
+
 	// Standard English Alphabet
 	private static final char[] ALPHABET = {'a', 'b', 'c', 'd', 'e', 'f', 'g',
 											'h', 'i', 'j', 'k', 'l', 'm', 'n',
@@ -21,17 +21,17 @@ public class Caesar {
 	 * @param shiftDist is the desired shift of alphabet
 	 * @param encryptingTime determines whether we are encrypting or decrypting: true if encrypting
 	 */
-	public Caesar(int shiftDist, boolean encryptingTime) {
+	public CaesarCipher(int shiftDist, boolean encryptingTime) {
 		shift = shiftDist;
 		encrypting = encryptingTime;
 	}
-	
+
 	// Decide whether encrypting or decrypting, then perform it
 	public char changeChar(char current) {
 		if (encrypting) return this.encode(current);
 		else return this.decode(current);
 	}
-	
+
 	// Change plaintext into ciphertext
 	private char encode(char current) {
         int index = 0;
@@ -40,10 +40,10 @@ public class Caesar {
                 index = i;
             }
         }
-        
+
         // Check if the character is in the alphabet
         if (index == -1) return ' ';
-        
+
         int desiredIndex = index + shift;
         while (desiredIndex >= ALPHABET.length) {
         	desiredIndex -= ALPHABET.length;
@@ -53,7 +53,7 @@ public class Caesar {
         }
         return ALPHABET[desiredIndex];
 	}
-	
+
 	// Change ciphertext into plaintext
 	private char decode(char current) {
         int index = -1;
@@ -62,10 +62,10 @@ public class Caesar {
                 index = i;
             }
         }
-        
+
         // Check if the character is in the alphabet
         if (index == -1) return ' ';
-        
+
         int desiredIndex = index - shift;
         while (desiredIndex >= ALPHABET.length) {
         	desiredIndex -= ALPHABET.length;

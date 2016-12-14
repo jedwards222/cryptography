@@ -57,7 +57,7 @@ public class Tester {
 
 		// Create Encoders/Decoders
 		String original = "";
-		Caesar mystery0 = new Caesar(5, encrypt);
+		CaesarCipher mystery0 = new CaesarCipher(5, encrypt);
 		String caesarReturn = "";
 		CustomCipher mystery1 = new CustomCipher(alpha, encrypt);
 		String customReturn = "";
