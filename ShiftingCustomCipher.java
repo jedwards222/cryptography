@@ -7,22 +7,15 @@
  * with relevant Tester file.
  */
 
-public class ShiftingCustomCipher {
+public class ShiftingCustomCipher extends SubstitutionCipher {
 
-  // Standard English Alphabet
-  private static final char[] ALPHABET = {'a', 'b', 'c', 'd', 'e', 'f', 'g',
-                                          'h', 'i', 'j', 'k', 'l', 'm', 'n',
-                                          'o', 'p', 'q', 'r', 's', 't', 'u',
-                                          'v', 'w', 'x', 'y', 'z'};
-
-  private boolean encrypting;
   private char[] cipher;
   private int charactersRead;
   private int shiftFreq;
 
   public ShiftingCustomCipher(char[] cipherAlphabet, boolean encryptingTime, int shiftFrequency) {
+    super(encryptingTime);
     cipher = cipherAlphabet;
-    encrypting = encryptingTime;
     shiftFreq = shiftFrequency;
     charactersRead = 0;
   }
@@ -38,14 +31,8 @@ public class ShiftingCustomCipher {
     cipher[cipher.length - 1] = temp;
   }
 
-  // Decide whether encrypting or decrypting, then perform it
-  public char changeChar(char current) {
-    if (encrypting) return this.encode(current);
-    else return this.decode(current);
-  }
-
   // Change plaintext into ciphertext
-  private char encode(char current) {
+  protected char encode(char current) {
     int index = 0;
     charactersRead++;
     if (charactersRead % shiftFreq == 0) {
@@ -60,7 +47,7 @@ public class ShiftingCustomCipher {
   }
 
   // Change ciphertext into plaintext
-  private char decode(char current) {
+  protected char decode(char current) {
     int index = 0;
       charactersRead++;
       if (charactersRead % shiftFreq == 0) {
