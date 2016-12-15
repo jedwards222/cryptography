@@ -15,7 +15,6 @@
  *    6. Increase efficiency by using StringBuilder class
  *    7. User input for cipher options (i.e. Caesar shift distance, alphabet)
  *    8. restructure cipher classes as inheriting from one interface
- *    9. Replace tabs with spaces
  */
 
 import java.util.Scanner;
