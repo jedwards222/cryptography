@@ -7,7 +7,7 @@
  */
 
  /*
-  TODO: use StringBuilder
+  TODO: use StringBuilder, fix line 68 out of bounds exception
  */
 
 public class GridCipher {
@@ -54,21 +54,25 @@ public class GridCipher {
   private String decode(String input) {
     String output = "";
     int length = input.length();
-    int over = length % height;
-    int dist = (over == 0) ? length/height : (length/height + 1);
+    final int rem = length % height;
+    final int rows = (rem == 0) ? length/height : (length/height + 1);
 
-    for (int pos = 0; pos < length/height; pos += 1) {
-      for (int col = pos; col < length; col += dist) {
+    int rowsVar = rows;
+    int remVar = rem;
+
+    for (int pos = 0; pos < rows; pos += 1) {
+      for (int col = pos; col < length; col += rowsVar) {
+        remVar--;
+        if (remVar == -1) {
+          if (pos == rows - 1) break;
+          rowsVar = length/height;
+        }
         output += input.charAt(col);
       }
-    }
-    // Deal with incompletely filled rows of the grid
-    int count = 0;
-    while (count < over) {
-      output+= input.charAt((height+1)*(count+1)-1);
-      count++;
-    }
+      remVar = rem;
+      rowsVar = rows;
 
+    }
     return output;
   }
 }
