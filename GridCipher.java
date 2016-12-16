@@ -6,10 +6,6 @@
  * cipher when used in conjunction with relevant Tester file.
  */
 
- /*
-  TODO: use StringBuilder, fix line 68 out of bounds exception
- */
-
 public class GridCipher {
 
   // Standard English Alphabet
@@ -39,20 +35,20 @@ public class GridCipher {
 
   // Change plaintext into ciphertext
   private String encode(String input) {
-    String output = "";
+    StringBuilder output = new StringBuilder();
     int length = input.length();
     // The output will be created by getting the elements from each row in turn
     for (int row = 0; row < height; row++) {
       for (int pos = row; pos < length; pos += height) {
-        output += input.charAt(pos);
+        output.append(input.charAt(pos));
       }
     }
-    return output;
+    return output.toString();
   }
 
   // Change ciphertext into plaintext
   private String decode(String input) {
-    String output = "";
+    StringBuilder output = new StringBuilder();
     int length = input.length();
     final int rem = length % height;
     final int rows = (rem == 0) ? length/height : (length/height + 1);
@@ -67,12 +63,12 @@ public class GridCipher {
           if (pos == rows - 1) break;
           rowsVar = length/height;
         }
-        output += input.charAt(col);
+        output.append(input.charAt(col));
       }
+      // Reset variables to original values
       remVar = rem;
       rowsVar = rows;
-
     }
-    return output;
+    return output.toString();
   }
 }

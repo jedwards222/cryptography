@@ -7,14 +7,12 @@
  * will be used as the input file for each cipher.
  *
  * TODO:
- *    1. add in feature for user to create cipher alphabet file
- *    2. try implementing FileChooser correctly
- *    3. output results to an output file, allow for clearing of input file?
- *    4. Allow user to choose only one cipher result
- *    5. Add additional cipher options
- *    6. Increase efficiency by using StringBuilder class
- *    7. User input for cipher options (i.e. Caesar shift distance, alphabet)
- *    8. restructure cipher classes as inheriting from one interface
+ *    - add in feature for user to create cipher alphabet file
+ *    - try implementing FileChooser correctly
+ *    - output results to an output file, allow for clearing of input file?
+ *    - Allow user to choose only one cipher result
+ *    - Add additional cipher options
+ *    - User input for cipher options (i.e. Caesar shift distance, alphabet)
  */
 
 import java.util.Scanner;
@@ -55,13 +53,13 @@ public class Tester {
 */
 
     // Create Encoders/Decoders
-    String original = "";
+    StringBuilder original = new StringBuilder();
     CaesarCipher mystery0 = new CaesarCipher(5, encrypt);
-    String caesarReturn = "";
+    StringBuilder caesarReturn = new StringBuilder();
     CustomCipher mystery1 = new CustomCipher(alpha, encrypt);
-    String customReturn = "";
+    StringBuilder customReturn = new StringBuilder();
     ShiftingCustomCipher mystery2 = new ShiftingCustomCipher(beta, encrypt, 1);
-    String shiftingReturn = "";
+    StringBuilder shiftingReturn = new StringBuilder();
     GridCipher mystery3 = new GridCipher(3, encrypt);
     String gridReturn;
 
@@ -78,19 +76,19 @@ public class Tester {
     while (input.hasNext()) {
       char[] nextString = input.next().toCharArray();
       for (int a = 0; a < nextString.length; a++) {
-        caesarReturn += (mystery0.changeChar(nextString[a]));
-        customReturn += (mystery1.changeChar(nextString[a]));
-        shiftingReturn += (mystery2.changeChar(nextString[a]));
-        original += nextString[a];
+        caesarReturn.append(mystery0.changeChar(nextString[a]));
+        customReturn.append(mystery1.changeChar(nextString[a]));
+        shiftingReturn.append(mystery2.changeChar(nextString[a]));
+        original.append(nextString[a]);
       }
     }
-    gridReturn = mystery3.changeMessage(original);
+    gridReturn = mystery3.changeMessage(original.toString());
 
     // Comment out to remove spaces between words and increase security
-    System.out.println("Original Message: " + original);
-    System.out.println("Caesar Result: " + caesarReturn);
-    System.out.println("Custom Cipher Result: " + customReturn);
-    System.out.println("Shifting Cipher Result: " + shiftingReturn);
+    System.out.println("Original Message: " + original.toString());
+    System.out.println("Caesar Result: " + caesarReturn.toString());
+    System.out.println("Custom Cipher Result: " + customReturn.toString());
+    System.out.println("Shifting Cipher Result: " + shiftingReturn.toString());
     System.out.println("Grid Cipher Result: " + gridReturn);
     input.close();
   }
