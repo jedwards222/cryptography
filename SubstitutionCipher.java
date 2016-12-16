@@ -2,21 +2,22 @@
  * SubstitutionCipher.java
  * @author James
  * December 15, 2016
- * Abstract class for substitution type ciphers
+ * Abstract class for substitution type ciphers, including Caesar, Custom, and
+ * Shifting Custom ciphers
  */
 
 public abstract class SubstitutionCipher {
 
   // Standard English Alphabet
   protected static final char[] ALPHABET = {'a', 'b', 'c', 'd', 'e', 'f', 'g',
-                      'h', 'i', 'j', 'k', 'l', 'm', 'n',
-                      'o', 'p', 'q', 'r', 's', 't', 'u',
-                      'v', 'w', 'x', 'y', 'z'};
+                                            'h', 'i', 'j', 'k', 'l', 'm', 'n',
+                                            'o', 'p', 'q', 'r', 's', 't', 'u',
+                                            'v', 'w', 'x', 'y', 'z'};
   protected boolean encrypting;
 
   /**
    * Constructor
-   * @param encryptingTime determines whether we are encrypting or decrypting: true if encrypting
+   * @param encryptingTime is true if encrypting, false if decrypting
    */
   public SubstitutionCipher(boolean encryptingTime) {
     encrypting = encryptingTime;
