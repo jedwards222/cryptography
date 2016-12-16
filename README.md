@@ -18,8 +18,10 @@ alphabet.
 substitution cipher, except that it shifts the alphabet used by some constant number
 of positions after each letter is substituted.
 
-4. a grid cipher, which works by placing the plaintext into a grid column by
-column, and then reading from the grid row by row to generate the ciphertext.
+4. a ["grid" cipher](https://en.wikipedia.org/wiki/Transposition_cipher#Columnar_transposition)
+, which works by placing the plaintext into a grid column by column, and then
+reading from the grid row by row to generate the ciphertext. The current version
+in the project is a simplified version of the description that is linked to.
 
 #### Compiling
 
