@@ -13,3 +13,6 @@ run:
 clean:
 	rm -f *.class
 	rm -f input.txt
+
+caesar:
+	java CaesarDriver
