@@ -4,6 +4,8 @@
  * December 15, 2016
  * Driver program specifically for Caesar cipher to test it more rigorously than
  * the combined testing file.
+ * Specifically, the encryptDecrypt and decryptEncrypt StringBuilders are used
+ * to confirm that encryption does the exact opposite of decryption.
  */
 
 import java.util.Scanner;
@@ -15,7 +17,7 @@ public class CaesarDriver {
 
     Scanner input = new Scanner(System.in);
 
-    // Interact with the user
+    // Interact with the user to gather their desired conditions
     String question = "What shift do you desire for the Caesar Cipher?" +
                       "\nType a positive integer. Invalid input treated as 1.";
     System.out.println(question);
@@ -24,12 +26,16 @@ public class CaesarDriver {
     String response = "You have chosen a shift of " + shift + "!";
     System.out.println(response);
 
-    // Create Encoders/Decoders
-    StringBuilder original = new StringBuilder();
+    // Create separate cipher objects for decryption and encryption
     CaesarCipher encrypter = new CaesarCipher(shift, true);
-    StringBuilder encryptReturn = new StringBuilder();
     CaesarCipher decrypter = new CaesarCipher(shift, false);
+
+    // StringBuilders are used instead of Strings for efficiency
+    StringBuilder original = new StringBuilder();
+    StringBuilder encryptReturn = new StringBuilder();
     StringBuilder decryptReturn = new StringBuilder();
+    StringBuilder decryptEncrypt = new StringBuilder();
+    StringBuilder encryptDecrypt = new StringBuilder();
 
     // Create a Scanner to read the input file.
     File inputFile = new File("input.txt");
@@ -44,16 +50,30 @@ public class CaesarDriver {
     while (input.hasNext()) {
       char[] nextString = input.next().toCharArray();
       for (int a = 0; a < nextString.length; a++) {
-        encryptReturn.append(encrypter.changeChar(nextString[a]));
-        decryptReturn.append(decrypter.changeChar(nextString[a]));
+        char encrypted = encrypter.changeChar(nextString[a]);
+        encryptReturn.append(encrypted);
+        encryptDecrypt.append(decrypter.changeChar(encrypted));
+
+        char decrypted = decrypter.changeChar(nextString[a]);
+        decryptReturn.append(decrypted);
+        decryptEncrypt.append(encrypter.changeChar(decrypted));
+
         original.append(nextString[a]);
       }
     }
 
-    // Comment out to remove spaces between words and increase security
+    // Check if decryption is doing opposite of encryption
+    boolean correct = (original.toString().equals(decryptEncrypt.toString()) &&
+                       original.toString().equals(encryptDecrypt.toString()));
+    String correctResponse = correct ?
+      "Decryption and Encryption are working correctly" :
+      "There is an issue with decryption and encryption";
+
+    // Give user results
     System.out.println("Original Message: " + original.toString());
     System.out.println("Caesar encrypt result: " + encryptReturn.toString());
     System.out.println("Caesar decrypt result: " + decryptReturn.toString());
+    System.out.println(correctResponse);
     input.close();
   }
 }
