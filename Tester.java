@@ -12,8 +12,6 @@
  *    - output results to an output file, allow for clearing of input file?
  *    - Allow user to choose only one cipher result
  *    - Add additional cipher options
- *    - User input for cipher options (i.e. Caesar shift distance, alphabet)
- *    - Characters not in alphabet ignored
  */
 
 import java.util.Scanner;
