@@ -16,3 +16,6 @@ clean:
 
 caesar:
 	java CaesarDriver
+
+custom:
+	java CustomDriver
