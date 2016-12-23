@@ -18,8 +18,12 @@ public class CaesarDriver {
     Scanner input = new Scanner(System.in);
 
     // Interact with the user to gather their desired conditions
+    String title = "========================================\n" +
+                   "===== Welcome to the Caesar Tester =====\n" +
+                   "========================================";
     String question = "What shift do you desire for the Caesar Cipher?" +
                       "\nType a positive integer. Invalid input treated as 1.";
+    System.out.println(title);
     System.out.println(question);
     int shiftInput = input.nextInt();
     int shift = shiftInput >= 0 ? shiftInput % 26 : 1;

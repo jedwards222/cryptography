@@ -33,9 +33,13 @@ public class Tester {
     Scanner input = new Scanner(System.in);
 
     // Interact with the user
+    String title = "==========================================\n" +
+                   "=== Welcome to the Cryptography Tester ===\n" +
+                   "==========================================";
     String question = "Are you encrypting or decrypting the message?\n" +
                         "Please type \"E\" or \"e\" if you are encrypting.\n" +
                         "Any other input will be interpreted as a request for decryption.";
+    System.out.println(title);
     System.out.println(question);
     String encryptInput = input.nextLine();
     boolean encrypt = (encryptInput.equals("E") || encryptInput.equals("e"));
