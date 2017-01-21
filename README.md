@@ -30,3 +30,10 @@ Compilation is simple: the user can either manually run `javac *.java` or use th
 #### Running
 
 To run the test file, the user may use the command `make run` or `java Tester`. The user should manually fill in the file `input.txt` with whatever text they would like to be encoded. The test program will then output the original contents of the input file, followed by the contents of the file after the various ciphers have been applied to it.
+
+<!-- TODO:
+  ~ add in feature for user to create cipher alphabet file
+  ~ try implementing FileChooser correctly
+  ~ output results to an output file, allow for clearing of input file?
+  ~ Allow user to choose only one cipher result
+  ~ Add additional cipher options -->

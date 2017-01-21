@@ -5,13 +5,6 @@
  * Test program for the various ciphers in this project. Creates a cipher
  * object of the Caesar, Shifting, Custom, and Grid varieties. The file input.txt
  * will be used as the input file for each cipher.
- *
- * TODO:
- *    - add in feature for user to create cipher alphabet file
- *    - try implementing FileChooser correctly
- *    - output results to an output file, allow for clearing of input file?
- *    - Allow user to choose only one cipher result
- *    - Add additional cipher options
  */
 
 import java.util.Scanner;
