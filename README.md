@@ -3,20 +3,20 @@
 
 #### Overview
 This project contains several different implementations of ciphers, inspired by
-Simon Singh's *[The Code Book](http://simonsingh.net/books/the-code-book/)*. Currently
-it includes 4 ciphers:
+Simon Singh's *[The Code Book](http://simonsingh.net/books/the-code-book/)*.
+Currently it includes 4 ciphers:
 
 1. a [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher),
 which works by replacing each letter in the plaintext with a letter that is some
 constant number of spaces away in the real alphabet.
 
 2. a [substitution cipher](https://en.wikipedia.org/wiki/Substitution_cipher),
-which works by replacing each letter in the plaintext according to a constant cipher
-alphabet.
+which works by replacing each letter in the plaintext according to a constant
+cipher alphabet.
 
-3. a custom shifting substitution cipher, which works in the same way as a normal
-substitution cipher, except that it shifts the alphabet used by some constant number
-of positions after each letter is substituted.
+3. a custom shifting substitution cipher, which works in the same way as a
+normal substitution cipher, except that it shifts the alphabet used by some
+constant number of positions after each letter is substituted.
 
 4. a ["grid" cipher](https://en.wikipedia.org/wiki/Transposition_cipher#Columnar_transposition)
 , which works by placing the plaintext into a grid column by column, and then
@@ -35,5 +35,8 @@ To run the test file, the user may use the command `make run` or `java Tester`. 
   ~ add in feature for user to create cipher alphabet file
   ~ try implementing FileChooser correctly
   ~ output results to an output file, allow for clearing of input file?
-  ~ Allow user to choose only one cipher result
-  ~ Add additional cipher options -->
+  ~ Additional cipher options
+  ~ Drivers for each cipher
+  ~ update README with instructions for the individual drivers
+  ~ CustomDriver - properly output invalid alphabet message
+  -->
