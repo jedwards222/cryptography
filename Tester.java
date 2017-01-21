@@ -17,6 +17,7 @@
 import java.util.Scanner;
 import javax.swing.*;
 import java.io.*;
+import ciphers.*;
 // import java.util.concurrent.TimeUnit;
 
 public class Tester {

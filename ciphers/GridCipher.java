@@ -6,6 +6,8 @@
  * cipher when used in conjunction with relevant Tester file.
  */
 
+package ciphers;
+
 public class GridCipher {
 
   // Standard English Alphabet

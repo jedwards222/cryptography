@@ -7,6 +7,8 @@
  * with relevant Tester file.
  */
 
+package ciphers;
+
 public class ShiftingCustomCipher extends SubstitutionCipher {
 
   private char[] cipher;

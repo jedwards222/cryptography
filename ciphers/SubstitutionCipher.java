@@ -6,6 +6,8 @@
  * Shifting Custom ciphers
  */
 
+package ciphers;
+
 public abstract class SubstitutionCipher {
 
   // Standard English Alphabet

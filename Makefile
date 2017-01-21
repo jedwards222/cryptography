@@ -3,6 +3,7 @@
 # December 2016
 
 make:
+	javac ciphers/*.java
 	javac *.java
 	touch input.txt
 	nano input.txt
@@ -12,6 +13,7 @@ run:
 
 clean:
 	rm -f *.class
+	rm -f ciphers/*.class
 	rm -f input.txt
 
 caesar:

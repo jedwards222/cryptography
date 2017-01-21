@@ -6,6 +6,8 @@
  * and when used in conjunction with relevant Tester file.
  */
 
+package ciphers;
+
 public class CustomCipher extends SubstitutionCipher {
 
   private char[] cipher;
