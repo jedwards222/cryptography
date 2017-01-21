@@ -28,10 +28,10 @@ public class CustomDriver {
 
 // Determine if the cipher alphabet is valid as is, or if changes are required
 
-    char[] alpha = fillAlphabet(alphabet);
-
-    boolean valid = true;
-
+    Result returnedValues = fillAlphabet(alphabet);
+    char[] alpha = returnedValues.chars;
+    boolean valid = returnedValues.bool;
+    
     String response = valid ? "Your alphabet was valid!" :
       "Some changes were made to your alphabet to make it valid.";
     System.out.println(response);
@@ -87,10 +87,11 @@ public class CustomDriver {
     input.close();
   }
 
-  private static char[] fillAlphabet(String input) {
+  private static Result fillAlphabet(String input) {
     boolean[] letterSeen = new boolean[26];
     char[] alphabet = new char[26];
     String lower = input.toLowerCase();
+    boolean allValid = true;
 
     int alphaIndex = 0;
     int length = lower.length();
@@ -103,22 +104,35 @@ public class CustomDriver {
           alphabet[alphaIndex] = lower.charAt(i);
           alphaIndex++;
         }
-      }
+      } else allValid = false; // Alphabet is invalid if non letter included
       if (alphaIndex >= 26) {
-        return alphabet;
+        return new Result(alphabet, allValid);
       }
     }
     // If this point is reached, not every letter in the alphabet has been
     // included in the cipher alphabet yet. Add them:
+    allValid = false;
     for (int i = 0; i < 26; i++) {
       if (!letterSeen[i]) {
         alphabet[alphaIndex] = (char)(i + 'a');
         alphaIndex++;
         if (alphaIndex >= 26) {
-          return alphabet;
+          return new Result(alphabet, allValid);
         }
       }
     }
-    return alphabet;
+    return new Result(alphabet, allValid);
   }
+
+  // small helper class used to return pair of values
+  public static class Result {
+    public final char[] chars;
+    public final boolean bool;
+
+    public Result(char[] c, boolean b) {
+      this.chars = c;
+      this.bool = b;
+    }
+  }
+
 }

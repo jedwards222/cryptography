@@ -29,7 +29,9 @@ Compilation is simple: the user can either manually run `javac *.java` or use th
 
 #### Running
 
-To run the test file, the user may use the command `make run` or `java Tester`. The user should manually fill in the file `input.txt` with whatever text they would like to be encoded. The test program will then output the original contents of the input file, followed by the contents of the file after the various ciphers have been applied to it.
+To run the overall test file, the user may use the command `make run` or `java Tester`. The user may also run the specific test files for each individual cipher using the command `make caesar`, `make custom`, or `make grid`.
+
+After the test program has been selected, it will output the original contents of the input file, followed by the contents of the file after the various tests have been applied to it.
 
 <!-- TODO:
   ~ add in feature for user to create cipher alphabet file
@@ -37,6 +39,5 @@ To run the test file, the user may use the command `make run` or `java Tester`. 
   ~ output results to an output file, allow for clearing of input file?
   ~ Additional cipher options
   ~ Drivers for each cipher
-  ~ update README with instructions for the individual drivers
   ~ CustomDriver - properly output invalid alphabet message
   -->

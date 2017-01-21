@@ -1,8 +1,8 @@
 /**
  * GridDriver.java
  * @author James
- * December 15, 2016
- * Driver program specifically for custom cipher to test it more rigorously than
+ * January 20, 2017
+ * Driver program specifically for grid cipher to test it more rigorously than
  * the combined testing file.
  * Specifically, the encryptDecrypt and decryptEncrypt StringBuilders are used
  * to confirm that encryption does the exact opposite of decryption.
