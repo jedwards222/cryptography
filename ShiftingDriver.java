@@ -1,8 +1,8 @@
 /**
- * CustomDriver.java
+ * ShiftingDriver.java
  * @author James
- * December 15, 2016
- * Driver program specifically for custom cipher to test it more rigorously than
+ * January 21, 2017
+ * Driver program specifically for shifting custom cipher to test it more rigorously than
  * the combined testing file.
  * Specifically, the encryptDecrypt and decryptEncrypt StringBuilders are used
  * to confirm that encryption does the exact opposite of decryption.
@@ -11,19 +11,36 @@
 import java.util.Scanner;
 import javax.swing.*;
 import java.io.*;
-import ciphers.CustomCipher;
+import ciphers.ShiftingCustomCipher;
 
-public class CustomDriver {
+public class ShiftingDriver {
   public static void main(String[] args) throws IOException, FileNotFoundException {
 
     Scanner input = new Scanner(System.in);
 
+    String title = "==================================================\n" +
+                   "=== Welcome to the ShiftingCustomCipher Tester ===\n" +
+                   "==================================================";
+    String q1 = "\nPlease give a valid shift frequency. Restrictions:" +
+                "\nMust be an integer greater than 0. Invalid input will be" +
+                "\ngiven a value of 2.";
+    System.out.println(title);
+    System.out.println(q1);
+
+    int freq = input.nextInt();
+    boolean validFreq = (freq > 0);
+    if (!validFreq) freq = 2;
+
+    String response1 = validFreq ? "Your frequency was valid!" :
+      "Your frequency was invalid. Frequency 2 used instead.";
+    System.out.println(response1);
+
     // Interact with the user to gather their desired conditions
-    String question = "\nPlease give a valid cipher alphabet. Restrictions:" +
-                      "\nInclude every letter in the English alphabet once." +
-                      "\nRepeated letters ignored. Missing letters will be" +
-                      "\nadded to the end of the given cipher alphabet.";
-    System.out.println(question);
+    String q2 = "\nPlease give a valid cipher alphabet. Restrictions:" +
+                "\nInclude every letter in the English alphabet once." +
+                "\nRepeated letters ignored. Missing letters will be" +
+                "\nadded to the end of the given cipher alphabet.";
+    System.out.println(q2);
     String alphabet = input.next();
 
 // Determine if the cipher alphabet is valid as is, or if changes are required
@@ -32,13 +49,13 @@ public class CustomDriver {
     char[] alpha = returnedValues.chars;
     boolean valid = returnedValues.bool;
 
-    String response = valid ? "Your alphabet was valid!" :
+    String response2 = valid ? "Your alphabet was valid!" :
       "Some changes were made to your alphabet to make it valid.";
-    System.out.println(response);
+    System.out.println(response2);
 
     // Create separate cipher objects for decryption and encryption
-    CustomCipher encrypter = new CustomCipher(alpha, true);
-    CustomCipher decrypter = new CustomCipher(alpha, false);
+    ShiftingCustomCipher encrypter = new ShiftingCustomCipher(alpha, true, freq);
+    ShiftingCustomCipher decrypter = new ShiftingCustomCipher(alpha, false, freq);
 
     // StringBuilders are used instead of Strings for efficiency
     StringBuilder original = new StringBuilder();
@@ -81,8 +98,8 @@ public class CustomDriver {
 
     // Give user results
     System.out.println("Original Message: " + original.toString());
-    System.out.println("Custom encrypt result: " + encryptReturn.toString());
-    System.out.println("Custom decrypt result: " + decryptReturn.toString());
+    System.out.println("ShiftingCustom encrypt result: " + encryptReturn.toString());
+    System.out.println("ShiftingCustom decrypt result: " + decryptReturn.toString());
     System.out.println(correctResponse);
     input.close();
   }

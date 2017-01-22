@@ -29,7 +29,7 @@ Compilation is simple: the user can either manually run `javac *.java` or use th
 
 #### Running
 
-To run the overall test file, the user may use the command `make run` or `java Tester`. The user may also run the specific test files for each individual cipher using the command `make caesar`, `make custom`, or `make grid`.
+To run the overall test file, the user may use the command `make run` or `java Tester`. The user may also run the specific test files for each individual cipher using the command `make caesar`, `make custom`, `make shifting`, or `make grid`.
 
 After the test program has been selected, it will output the original contents of the input file, followed by the contents of the file after the various tests have been applied to it.
 
