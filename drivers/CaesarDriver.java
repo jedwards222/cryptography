@@ -8,6 +8,8 @@
  * to confirm that encryption does the exact opposite of decryption.
  */
 
+package drivers;
+
 import java.util.Scanner;
 import javax.swing.*;
 import java.io.*;
@@ -71,8 +73,8 @@ public class CaesarDriver {
     boolean correct = (original.toString().equals(decryptEncrypt.toString()) &&
                        original.toString().equals(encryptDecrypt.toString()));
     String correctResponse = correct ?
-      "Decryption and Encryption are working together correctly" :
-      "There is an issue with decryption and encryption";
+      "Decryption and Encryption are working together correctly." :
+      "There is an issue with decryption and encryption.";
 
     // Give user results
     System.out.println("Original Message: " + original.toString());

@@ -4,6 +4,7 @@
 
 make:
 	javac ciphers/*.java
+	javac drivers/*.java
 	javac *.java
 	touch input.txt
 	nano input.txt
@@ -14,16 +15,17 @@ run:
 clean:
 	rm -f *.class
 	rm -f ciphers/*.class
+	rm -f drivers/*.class
 	rm -f input.txt
 
 caesar:
-	java CaesarDriver
+	java drivers/CaesarDriver
 
 custom:
-	java CustomDriver
+	java drivers/CustomDriver
 
 grid:
-	java GridDriver
+	java drivers/GridDriver
 
 shifting:
-	java ShiftingDriver
+	java drivers/ShiftingDriver
