@@ -10,13 +10,12 @@ Currently it includes 4 ciphers:
 which works by replacing each letter in the plaintext with a letter that is some
 constant number of spaces away in the real alphabet.
 
-2. a [substitution cipher](https://en.wikipedia.org/wiki/Substitution_cipher),
+2. a custom [substitution cipher](https://en.wikipedia.org/wiki/Substitution_cipher),
 which works by replacing each letter in the plaintext according to a constant
 cipher alphabet.
 
 3. a custom shifting substitution cipher, which works in the same way as a
-normal substitution cipher, except that it shifts the alphabet used by some
-constant number of positions after each letter is substituted.
+custom substitution cipher, except that it shifts the alphabet by one position at a certain frequency of letter substitutions.
 
 4. a ["grid" cipher](https://en.wikipedia.org/wiki/Transposition_cipher#Columnar_transposition)
 , which works by placing the plaintext into a grid column by column, and then
@@ -34,10 +33,9 @@ To run the overall test file, the user may use the command `make run` or `java T
 After the test program has been selected, it will output the original contents of the input file, followed by the contents of the file after the various tests have been applied to it.
 
 <!-- TODO:
-  ~ add in feature for user to create cipher alphabet file
   ~ try implementing FileChooser correctly
   ~ output results to an output file, allow for clearing of input file?
   ~ Additional cipher options
   ~ Drivers for each cipher
-  ~ CustomDriver - properly output invalid alphabet message
+  ~ SCC encryption and decryption are not working as inverses
   -->

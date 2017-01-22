@@ -51,14 +51,14 @@ public class ShiftingCustomCipher extends SubstitutionCipher {
   // Change ciphertext into plaintext
   protected char decode(char current) {
     int index = 0;
-      charactersRead++;
-      if (charactersRead % shiftFreq == 0) {
-        changeCipher();
-      }
-      for (int i=0; i< cipher.length; i++) {
-        if (cipher[i] == current)
-          index = i;
-      }
+    charactersRead++;
+    if (charactersRead % shiftFreq == 0) {
+      changeCipher();
+    }
+    for (int i=0; i< cipher.length; i++) {
+      if (cipher[i] == current)
+        index = i;
+    }
     return ALPHABET[index];
   }
 }
