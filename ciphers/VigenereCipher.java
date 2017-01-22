@@ -2,7 +2,7 @@
  * VigenereCipher.java
  * @author James
  * January 21, 2017
- * Allows conversion between ciphertext and plaintext using a custom cipher
+ * Allows conversion between ciphertext and plaintext using a vigenere cipher
  * that alters itself through encoding/decoding when used in conjunction
  * with relevant Tester file.
  */
@@ -45,7 +45,7 @@ public class VigenereCipher extends SubstitutionCipher {
     int startPos = charactersRead % keyword.length();
     changeCipher(keyword.charAt(startPos));
 
-    for(int i=0; i<ALPHABET.length; i++) {
+    for(int i = 0; i < ALPHABET.length; i++) {
       if (ALPHABET[i] == current) {
         index = i;
       }
@@ -60,7 +60,7 @@ public class VigenereCipher extends SubstitutionCipher {
     int startPos = charactersRead % keyword.length();
     changeCipher(keyword.charAt(startPos));
 
-    for (int i=0; i< cipher.length; i++) {
+    for (int i = 0; i < cipher.length; i++) {
       if (cipher[i] == current)
         index = i;
     }

@@ -11,6 +11,7 @@ import java.util.Scanner;
 import javax.swing.*;
 import java.io.*;
 import ciphers.*;
+import ciphers.CaesarCipher;
 // import java.util.concurrent.TimeUnit;
 
 public class Tester {
