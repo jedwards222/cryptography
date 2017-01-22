@@ -25,7 +25,7 @@ public class CaesarCipher extends SubstitutionCipher {
   // Change plaintext into ciphertext
   protected char encode(char current) {
     int index = -1;
-    for(int i=0; i < ALPHABET.length; i++) {
+    for(int i = 0; i < ALPHABET.length; i++) {
       if (ALPHABET[i] == current) {
         index = i;
       }
@@ -47,7 +47,7 @@ public class CaesarCipher extends SubstitutionCipher {
   // Change ciphertext into plaintext
   protected char decode(char current) {
     int index = -1;
-    for(int i=0; i < ALPHABET.length; i++) {
+    for(int i = 0; i < ALPHABET.length; i++) {
       if (ALPHABET[i] == current) {
         index = i;
       }

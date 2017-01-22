@@ -59,6 +59,8 @@ public class Tester {
     StringBuilder shiftingReturn = new StringBuilder();
     GridCipher mystery3 = new GridCipher(3, encrypt);
     String gridReturn;
+    VigenereCipher mystery4 = new VigenereCipher("james", encrypt);
+    StringBuilder vigenereReturn = new StringBuilder();
 
     // Create a Scanner to read the input file.
     File inputFile = new File("input.txt");
@@ -76,6 +78,7 @@ public class Tester {
         caesarReturn.append(mystery0.changeChar(nextString[a]));
         customReturn.append(mystery1.changeChar(nextString[a]));
         shiftingReturn.append(mystery2.changeChar(nextString[a]));
+        vigenereReturn.append(mystery4.changeChar(nextString[a]));
         original.append(nextString[a]);
       }
     }
@@ -87,6 +90,7 @@ public class Tester {
     System.out.println("Custom Cipher Result: " + customReturn.toString());
     System.out.println("Shifting Cipher Result: " + shiftingReturn.toString());
     System.out.println("Grid Cipher Result: " + gridReturn);
+    System.out.println("Vigenere Cipher Result: " + vigenereReturn.toString());
     input.close();
   }
 }

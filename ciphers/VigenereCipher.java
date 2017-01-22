@@ -34,7 +34,7 @@ public class VigenereCipher extends SubstitutionCipher {
       cipher[i-index] = ALPHABET[i];
     }
     for (int j = 0; j < index; j++) {
-      cipher[cipher.length - index] = temp[index];
+      cipher[cipher.length - 1 - index] = temp[j];
     }
   }
 

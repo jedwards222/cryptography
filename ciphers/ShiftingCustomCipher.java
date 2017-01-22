@@ -40,7 +40,7 @@ public class ShiftingCustomCipher extends SubstitutionCipher {
     if (charactersRead % shiftFreq == 0) {
       changeCipher();
     }
-    for(int i=0; i<ALPHABET.length; i++) {
+    for(int i = 0; i < ALPHABET.length; i++) {
       if (ALPHABET[i] == current) {
         index = i;
       }
@@ -55,7 +55,7 @@ public class ShiftingCustomCipher extends SubstitutionCipher {
     if (charactersRead % shiftFreq == 0) {
       changeCipher();
     }
-    for (int i=0; i< cipher.length; i++) {
+    for (int i = 0; i < cipher.length; i++) {
       if (cipher[i] == current)
         index = i;
     }
