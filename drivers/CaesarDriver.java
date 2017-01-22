@@ -13,7 +13,7 @@ package drivers;
 import java.util.Scanner;
 import javax.swing.*;
 import java.io.*;
-import ciphers.CaesarDriver;
+import ciphers.CaesarCipher;
 
 public class CaesarDriver {
   public static void main(String[] args) throws IOException, FileNotFoundException {

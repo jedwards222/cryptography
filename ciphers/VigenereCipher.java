@@ -1,13 +1,15 @@
 /**
- * ShiftingCustomCipher.java
+ * VigenereCipher.java
  * @author James
- * June 3, 2016
+ * January 21, 2017
  * Allows conversion between ciphertext and plaintext using a custom cipher
  * that alters itself through encoding/decoding when used in conjunction
  * with relevant Tester file.
  */
 
 package ciphers;
+
+import java.util.Arrays;
 
 public class VigenereCipher extends SubstitutionCipher {
 
@@ -26,13 +28,13 @@ public class VigenereCipher extends SubstitutionCipher {
    * changeCipher shifts the cipher alphabet to the given letter
    */
   private void changeCipher(char keyChar) {
-    int index = (int)(keyChar - 'a');
+    int index = (keyChar - 'a');
     char[] temp = Arrays.copyOfRange(ALPHABET, 0, index);
     for (int i = index; i < ALPHABET.length; i++) {
-      cipher[i-length] = ALPHABET[i];
+      cipher[i-index] = ALPHABET[i];
     }
     for (int j = 0; j < index; j++) {
-      cipher[cipher.length - index = temp[index]];
+      cipher[cipher.length - index] = temp[index];
     }
   }
 
@@ -57,7 +59,7 @@ public class VigenereCipher extends SubstitutionCipher {
     charactersRead++;
     int startPos = charactersRead % keyword.length();
     changeCipher(keyword.charAt(startPos));
-    
+
     for (int i=0; i< cipher.length; i++) {
       if (cipher[i] == current)
         index = i;
