@@ -1,2 +1,9 @@
+
+# Object files
 *.class
+
+# Output files
 *.txt
+
+# Unfinished work
+practice
